@@ -1,10 +1,15 @@
-export const initialState = {
-    themeColorState : 'white',
-    themeColor : 'white',
-    files : [
-      {id : 0, name : 'exmaple',
-       fileContent : 
-  `Markdown Quick Reference
+export default {
+    themeColor: {
+        color: "white",
+        navigation: "nav-white",
+        textAreaHeader: "textarea-header_white",
+    },
+    files: [
+        {
+            id: 0,
+            name: "exmaple",
+            selected: true,
+            fileContent: `Markdown Quick Reference
   ========================
   
   This guide is a very brief overview, with examples, of the syntax that [Markdown] supports. It is itself written in Markdown and you can copy the samples over to the left-hand pane for experimentation. It's shown as *text* and not *rendered HTML*.
@@ -175,7 +180,6 @@ export const initialState = {
   It is a pity, but markdown does **not** work in here for most markdown parsers.
   [Marked] handles it pretty well.
   </div>`,
-       
-       selected : true,}
-    ]
-  }
+        },
+    ],
+};

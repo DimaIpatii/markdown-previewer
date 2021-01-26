@@ -1,7 +1,6 @@
 /* Normalize: */
 @import "~normalize.css";
 
-
 // ******************************************
 // Variables:
 // ******************************************
@@ -18,82 +17,60 @@ $color-main-captions: #fff;
 $color-main-block: #fff;
 $color-textarea: #fff;
 
-
-
-  /*$color-nav: #939090;
-  $color-main-captions: #7C7C7C;
-  $color-main-block: #847E7E;
-  $caption: #fff;
-  $file-name: #fff;
-  
-  $full-screen-rows: #FFFFFF;*/
-
-
-  /*$color-nav: #262626;
-  $color-main-captions: #222121;
-  $color-main-block: #404040;
-  $caption: #fff;
-  $file-name: #fff;
-  $icon-ball-bg: #695F5F;
-  $full-screen-rows: #FFFFFF;
-*/
-
-
-$color-textarea-field: #F5F5F5;
-$selected:#FC8208;
+$color-textarea-field: #f5f5f5;
+$selected: #fc8208;
 
 // Nav divider:
 // ******************************************
 $icon-ball-bg: #fff;
-$icon-ball-border: #C1BEBE;
-
+$icon-ball-border: #c1bebe;
 
 // Files Color:
 // ******************************************
-$file:#E3E3E3;
-$file-rows:#707070;
+$file: #e3e3e3;
+$file-rows: #707070;
 
 // Buttons:
 // ******************************************
 $add-file: #939090;
-$save:#2AC40E;
-$del:#F72B06;
-$full-screen:#C1C6C1;
-$full-screen-rows:#707070;
-
+$save: #2ac40e;
+$del: #f72b06;
+$full-screen: #c1c6c1;
+$full-screen-rows: #707070;
 
 // ******************************************
 // Mixins:
 // ******************************************
-@mixin size($width, $height: $width){
-  width: $width;
-  height: $height;
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
 }
-@mixin center{
+@mixin center {
     position: absolute;
     top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-@mixin shadow{
-  box-shadow: 0 0 6px 4px #00000024;
+
+@mixin shadow {
+    box-shadow: 0 0 6px 4px #00000024;
 }
 // ******************************************
 // Default Settings:
 // ******************************************
 *,
 *::before,
-*::after{
-  margin:0px;
-  padding:0px;
-  box-sizing: border-box;
+*::after {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
-html{
-  font-size:62.5%;
+html {
+    font-size: 62.5%;
 }
 html,
-body{
+body {
     margin: 0px;
     padding: 0px;
 
@@ -108,38 +85,35 @@ body{
     overflow: auto;
 }
 
-body{
-  font-size:1.6rem;
-  font-family: 'Hind', sans-serif;
-  font-weight: 300;
-  
+body {
+    font-size: 1.6rem;
+    font-family: "Hind", sans-serif;
+    font-weight: 300;
 }
 
 a,
 a:visited,
-a:active{
-  text-decoration: none;
-  color: inherit;
+a:active {
+    text-decoration: none;
+    color: inherit;
 }
 
-
-
-button{
-  outline: none;
-  border: none;
-  background-color:inherit;
-  cursor: pointer;
+button {
+    outline: none;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
 }
 
-textarea{
-  border: none;
-  background-color: transparent;
-  resize: none;
-  outline: none;
+textarea {
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
 }
-h2{
-  font-size: 2rem;
-  font-weight: 400;
+h2 {
+    font-size: 2rem;
+    font-weight: 400;
 }
 
 // ******************************************
@@ -148,314 +122,293 @@ h2{
 
 // Buttons:
 // ******************************************
-.btn{
-  border: 1px solid;
-  border-radius: .5rem;
-  position: relative;
-  cursor: pointer;
-  
-  &_add-new-file{
-    @include size(4rem);
-    border-color: #939090;
-    font-size: 4rem;
-  }
-  &_add-new-file::before,
-  &_add-new-file::after{
-    display: block;
-    content: '';
-    @include size(2.5rem,.15rem);
-    
-    background-color: #939090;
-    @include center;
-  }
-  &_add-new-file::after{
-    transform: translate(-50%,-50%) rotate(90deg);
-  }
- 
-  &__del{
-    
-    opacity: 0;
-    @include size(2rem);
-    border-radius: 100%;
-    position: absolute;
-    z-index: -1;
-    top: .1rem;
-    right: .1rem;
-    
-    background-color: $del;
-    color: white;
-    font-size: 1rem;
-    
-    p{
-      line-height: 0;
-    }
-  }
-  
-  &_save{
-     padding: .2rem .7rem;
-  }
-  &_save{
-    //boder-color: $save;
-    color: $save;
-  }
+.btn {
+    border: 1px solid;
+    border-radius: 0.5rem;
+    position: relative;
+    cursor: pointer;
 
-  &_add-file-caption{
-    background-color: #2AC40E;
-    color: white;
-    width: 4rem;
-  }
+    &_add-new-file {
+        @include size(4rem);
+        border-color: #939090;
+        font-size: 4rem;
+    }
+    &_add-new-file::before,
+    &_add-new-file::after {
+        display: block;
+        content: "";
+        @include size(2.5rem, 0.15rem);
+
+        background-color: #939090;
+        @include center;
+    }
+    &_add-new-file::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    &__del {
+        opacity: 0;
+        @include size(2rem);
+        border-radius: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0.1rem;
+        right: 0.1rem;
+
+        background-color: $del;
+        color: white;
+        font-size: 1rem;
+
+        p {
+            line-height: 0;
+        }
+    }
+
+    &_save {
+        padding: 0.2rem 0.7rem;
+    }
+    &_save {
+        //boder-color: $save;
+        color: $save;
+    }
+
+    &_add-file-caption {
+        background-color: #2ac40e;
+        color: white;
+        width: 4rem;
+    }
 }
 
 // Wrapper:
 // ******************************************
-.app-wrapper{
-  @include size(100vw,100vh);
-  
-  display: grid;
-  grid-template-columns: 13rem 1fr 1fr;
-  grid-template-rows:auto;
-  
-  &__header{
-    grid-column: 1 /2;
-    grid-row:1 / -1;
-  }
-  &__main{
-    grid-column: 2 / -1;
-    grid-row:1 / -1;
-  }
-  
-}
+.app-wrapper {
+    @include size(100vw, 100vh);
 
+    display: grid;
+    grid-template-columns: 13rem 1fr 1fr;
+    grid-template-rows: auto;
+
+    &__header {
+        grid-column: 1 /2;
+        grid-row: 1 / -1;
+    }
+    &__main {
+        grid-column: 2 / -1;
+        grid-row: 1 / -1;
+    }
+}
 
 // Header:
 // ******************************************
-.navigation{
-  height: 100%;
-  text-align: center;
-  @include shadow;
-  //background-color: $color-nav;
-  &__caption{margin-bottom: 1.5rem;}
-  &__divider{
-    margin: 2rem auto 2rem auto ;
-  }
+.navigation {
+    height: 100%;
+    text-align: center;
+    @include shadow;
+    //background-color: $color-nav;
+    &__caption {
+        margin-bottom: 1.5rem;
+    }
+    &__divider {
+        margin: 2rem auto 2rem auto;
+    }
 }
 
-.theme{
-  padding-top:2.5rem;
+.theme {
+    padding-top: 2.5rem;
 }
-.theme-navigation{
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;  
+.theme-navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }
-.theme-label{
-  display: inline-block;
-  @include size(3rem);
-  border-radius: .5rem;
-  cursor: pointer;
-  
-  &_white{
-    background-color: #F8F8F8;
-    
-  }
-  &_grey{
-    background-color: #939090;
-  }
-  &_black{
-    background-color: #030303;
-  }
+.theme-label {
+    display: inline-block;
+    @include size(3rem);
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    &_white {
+        background-color: #f8f8f8;
+    }
+    &_grey {
+        background-color: #939090;
+    }
+    &_black {
+        background-color: #030303;
+    }
 }
 
-.theme-input{
-  display: none;  
+.theme-input {
+    display: none;
 }
- .theme-input:checked .theme-label{
-   border: 1px solid $selected;
+.theme-input:checked .theme-label {
+    border: 1px solid $selected;
 }
-.selected{
-   border: 1px solid $selected;
-}
-
-.navigation-divider{
-  display: flex;
-  justify-content: space-evenly;
-
-  @include size(80%, 1rem);
-  
+.selected {
+    border: 1px solid $selected;
 }
 
-.divider-icon{
-  display: inline-block;
-  @include size(.8rem);
-  background-color:$icon-ball-bg;
-  border: 1px solid $icon-ball-border;
-  border-radius: 100px;
-  box-shadow: 0px 0px 2px .05px #B5B5B5;
+.navigation-divider {
+    display: flex;
+    justify-content: space-evenly;
+
+    @include size(80%, 1rem);
+}
+
+.divider-icon {
+    display: inline-block;
+    @include size(0.8rem);
+    background-color: $icon-ball-bg;
+    border: 1px solid $icon-ball-border;
+    border-radius: 100px;
+    box-shadow: 0px 0px 2px 0.05px #b5b5b5;
 }
 
 // *******************
-.files{
-  
-  &__caption{
-    margin-bottom: 1.5rem;
-  }
-  &__list{
-    margin-bottom: 2rem;
-  }
+.files {
+    &__caption {
+        margin-bottom: 1.5rem;
+    }
+    &__list {
+        margin-bottom: 2rem;
+    }
 }
-.files-list{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  &__item{
-    margin-bottom: 1rem;
-    
-  }
+.files-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__item {
+        margin-bottom: 1rem;
+    }
 }
 
 // Temporary:
 /////////////
-.selected{
-  border: 2px solid $selected;
-  border-radius: .5rem;
+.selected {
+    border: 2px solid $selected;
+    border-radius: 0.5rem;
 }
 /////////////
 .list-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  @include size(8rem, max-content);
-  min-height: 8rem;
-  padding: .5rem;
-  position: relative;
-  
-  &__icon{
-   margin-bottom: 1rem;
-  }
-  &__name{   
-    font-size: 1.4rem;
-    line-height: 1.1;
-    color: inherit;
-    //text-weight: 200;
-  
-  }
-  
-  &:hover .btn__del{
-    opacity: 1;
-    z-index: 10;
-    transition: all .5s;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @include size(8rem, max-content);
+    min-height: 8rem;
+    padding: 0.5rem;
+    position: relative;
+
+    &__icon {
+        margin-bottom: 1rem;
+    }
+    &__name {
+        font-size: 1.4rem;
+        line-height: 1.1;
+        color: inherit;
+        //text-weight: 200;
+    }
+
+    &:hover .btn__del {
+        opacity: 1;
+        z-index: 10;
+        transition: all 0.5s;
+    }
 }
-.list-item-icon{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  @include size(6rem, 5rem);
-  padding: 1.5rem .5rem 1rem .5rem;
-  
-  border-radius: .5rem;
-  background-color: #E3E3E3;
-  cursor: pointer;
-}
-.list-item-line{
-  display: block;
-  @include size(100%, 1px);
-  margin-bottom: 0px;
-  background-color: #707070;
-  
-  &_short{
-    width: 70%;
-  }
+.list-item-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include size(6rem, 5rem);
+    padding: 1.5rem 0.5rem 1rem 0.5rem;
+
+    border-radius: 0.5rem;
+    background-color: #e3e3e3;
+    cursor: pointer;
 }
 
-.new-file-form{
-   width: 100%;
-   height: max-content;
-   display: flex;
-   flex-direction: column;
-  align-items: center;
-  
-  &__text-field{
+.new-file-form {
     width: 100%;
-    height: 2rem;
-    border: 1px solid #E3E3E3;
-    border-radius: .3rem;
-    outline : none;
-    background-color: transparent;
-    margin-bottom: 1rem;
-  }
-}
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    &__text-field {
+        width: 100%;
+        height: 2rem;
+        border: 1px solid #e3e3e3;
+        border-radius: 0.3rem;
+        outline: none;
+        background-color: transparent;
+        margin-bottom: 1rem;
+    }
+}
 
 // Main:
 // ******************************************
-.main{
-  display: flex;
-  overflow: hidden;
+.main {
+    display: flex;
+    overflow: hidden;
 }
-.editor-navigation{
-  display: flex;
-  align-items: center;
+.editor-navigation {
+    display: flex;
+    align-items: center;
 }
-.textarea{
-  position: relative;
-  padding: 1rem;
-  font-size: 1.8rem;
-  
-  &_editor,
-  &_preview{    
-    width: 50%;
-  } 
-}
-.textarea-header{
-  width: calc(100% + 2rem);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  
-  
-  height: 7.1rem;
-  position: relative;
-  box-shadow: 3px 0px 8px 1px #00000024;
-  
-  &__navigation{
-    position: absolute;
-    top: 50%;
-    right: 1rem;
-    transform: translateY(-50%);
-  }
-}
-.textarea-filed{
-  width:100%;
-  height: calc(100% - 7.1rem);
-  padding: 3rem;
-  font-family: 'Hind', sans-serif;
-  font-size: 1.7rem;
-  color: #757575;
-  background-color:$color-textarea-field;
-  overflow: auto;
-  
-  &_preview{
-    a{
-      color: $selected;
-    }
-  }
-}
+.textarea {
+    position: relative;
+    padding: 1rem;
+    font-size: 1.8rem;
 
+    &_editor,
+    &_preview {
+        width: 50%;
+    }
+}
+.textarea-header {
+    width: calc(100% + 2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+
+    height: 7.1rem;
+    position: relative;
+    box-shadow: 3px 0px 8px 1px #00000024;
+
+    &__navigation {
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+    }
+}
+.textarea-filed {
+    width: 100%;
+    height: calc(100% - 7.1rem);
+    padding: 3rem;
+    font-family: "Hind", sans-serif;
+    font-size: 1.7rem;
+    color: #757575;
+    background-color: $color-textarea-field;
+    overflow: auto;
+
+    &_preview {
+        a {
+            color: $selected;
+        }
+    }
+}
 
 // Common:
 // ******************************************
 
-.divider{
-  @include size(.3rem, 100vh);
-  background-color:grey;
+.divider {
+    @include size(0.3rem, 100vh);
+    background-color: grey;
 }
-
-
 
 // ******************************************
 // Themes:
@@ -464,85 +417,84 @@ h2{
 // ******************************************
 // Navigation Grey:
 // ******************************************
-.nav-white{
-  background-color: #fff;
-  color: #707070;
+.nav-white {
+    background-color: #fff;
+    color: #707070;
 }
-.nav-grey{
-  background-color: #939090;
-  color: #fff;
+.nav-grey {
+    background-color: #939090;
+    color: #fff;
 }
-.dividers-grey{
-  background-color: #A8A6A6;
-  border-color:#C1BEBE;
+.dividers-grey {
+    background-color: #a8a6a6;
+    border-color: #c1bebe;
 }
-.add-button-grey{
-  border-color: #676363;
-  
-  &::before,
-  &::after{
-    background-color: #676363;
-  }
+.add-button-grey {
+    border-color: #676363;
+
+    &::before,
+    &::after {
+        background-color: #676363;
+    }
 }
 
-.add-button-black{
-  border-color: #939090;
-  
-  &::before,
-  &::after{
-    background-color: #939090;
-  }
+.add-button-black {
+    border-color: #939090;
+
+    &::before,
+    &::after {
+        background-color: #939090;
+    }
 }
 // ******************************************
 // Navigation Black:
 // ******************************************
-.nav-black{
-  background-color: #262626;
-  color: #fff;
+.nav-black {
+    background-color: #262626;
+    color: #fff;
 }
-.dividers-black{
-  background-color: #695F5F;  
-  border-color:#C1BEBE;
+.dividers-black {
+    background-color: #695f5f;
+    border-color: #c1bebe;
 }
-
 
 // ******************************************
 // Editor White:
 // ******************************************
-.textarea-header_white{
-  background-color:#fff;
-  color: #707070;
-} 
+.textarea-header_white {
+    background-color: #fff;
+    color: #707070;
+}
 
 // ******************************************
 // Editor Grey:
 // ******************************************
-.textarea-header_grey{
-  background-color:#7C7C7C;
-  color:#FAF7F7;
+.textarea-header_grey {
+    background-color: #7c7c7c;
+    color: #faf7f7;
 }
-.textarea_editor_grey{
-  background-color:#847E7E;
+.textarea_editor_grey {
+    background-color: #847e7e;
 }
 
 /*.textarea_editor_arrow-top-grey,
 .textarea_editor_arrow-bottom-grey{
   color: #FFFFFF;
 }*/
-.textarea-arrow-grey{
-  color : #FFFFFF;
+.textarea-arrow-grey {
+    color: #ffffff;
 }
 
 // ******************************************
 // Editor Black:
 // ******************************************
-.textarea-header_black{
-  background-color:#222121;
-  color:#FAF7F7;
+.textarea-header_black {
+    background-color: #222121;
+    color: #faf7f7;
 }
-.textarea_editor_black{
-  background-color: #404040;
+.textarea_editor_black {
+    background-color: #404040;
 }
-.textarea-arrow-black{
-  color: #707070;
+.textarea-arrow-black {
+    color: #707070;
 }

@@ -1,9 +1,9 @@
 const path = require("path");
-const {merge} = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ESLintPlugin = require("eslint-webpack-plugin");
+var PrettierPlugin = require("prettier-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "development",
@@ -12,15 +12,17 @@ module.exports = merge(common, {
   plugins: [
     new MiniCssExtractPlugin({
       filename: "style.css",
-      chunkFilename: '[id].css'
+      chunkFilename: "[id].css",
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new ESLintPlugin({
-        overrideConfigFile: path.resolve(__dirname, '.eslintrc.json'),
-        context: path.resolve(__dirname, 'src'),
-        files: ['**/*.js',"**/*.jsx"],
-        extensions: [".js", ".jsx"]
-    }),
+    new PrettierPlugin({
+      printWidth: 80,               
+      tabWidth: 4,                  
+      useTabs: false,               
+      semi: true,                   
+      encoding: 'utf-8',            
+      extensions: [ ".js", ".jsx", '.scss' ]
+    })
   ],
   devServer: {
     index: "index.html",
@@ -35,14 +37,14 @@ module.exports = merge(common, {
         test: /\.(sa|sc|c)ss$/i,
         exclude: /node_modules/,
         use: [
-            {loader: MiniCssExtractPlugin.loader},
-            {
-                loader: "css-loader",
-                options: {importLoaders: 1, sourceMap: true},
-            },
-            {loader: "sass-loader", options: {sourceMap: true}},
+          { loader: MiniCssExtractPlugin.loader },
+          {
+            loader: "css-loader",
+            options: { importLoaders: 1, sourceMap: true },
+          },
+          { loader: "sass-loader", options: { sourceMap: true } },
         ],
-      }
+      },
     ],
   },
   optimization: {

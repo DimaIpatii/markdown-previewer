@@ -1,18 +1,18 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: ["@babel/polyfill", "./src/index.js"],
-  module : {
-    rules : [
-        {
-            test: /\.(js|jsx)$/,
-            exclude: /(node_modules|bower_components)/,
-            use: [{loader: "babel-loader"}],
-        },
-    ]
+  entry: ["@babel/polyfill", "./src/react/index.js"],
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [{ loader: "babel-loader" }],
+      },
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
