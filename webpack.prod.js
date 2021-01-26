@@ -32,6 +32,9 @@ module.exports = merge(common, {
       chunkFilename: "[id].[contenthash].css",
     }),
   ],
+  output: {
+    filename: "[name].[contenthash].js",
+  },
   optimization: {
     moduleIds: "deterministic",
     runtimeChunk: "single",
@@ -44,8 +47,5 @@ module.exports = merge(common, {
         },
       },
     },
-  },
-  output: {
-    filename: "[name].[contenthash].js",
-  },
+  }
 });
